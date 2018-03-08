@@ -5,20 +5,20 @@
   
   <title>WSL display desktop | Feng Wei&#39;s Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="WSL 显示桌面总结起来有两种方式在 Windows 上显示 Linux 桌面。 方式一：Windows端运行 Xserver 程序如 VcXsrv，Linux 端设置 DISPLAY=:0.0并运行xfce4-session即可。 方式二：Linux端启动 /etc/init.d/xrdpstart，Windows 端通过远程桌面连接127.0.0.1:3390 即可显示桌面。">
+  <meta name="description" content="WSL 显示桌面总结起来有两种方式在 Windows 上显示 Linux 桌面，Ubuntu和Kali都没问题。 方式一：Windows端运行 Xserver 程序如 VcXsrv，Linux 端设置 DISPLAY=:0.0并运行xfce4-session即可。 方式二：Linux端启动 /etc/init.d/xrdpstart，Windows 端通过远程桌面连接127.0.0.1:3390">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WSL display desktop">
 <meta property="og:url" content="http://fwzju.com/2018/03/08/WSL-display-desktop/index.html">
 <meta property="og:site_name" content="Feng Wei&#39;s Website">
-<meta property="og:description" content="WSL 显示桌面总结起来有两种方式在 Windows 上显示 Linux 桌面。 方式一：Windows端运行 Xserver 程序如 VcXsrv，Linux 端设置 DISPLAY=:0.0并运行xfce4-session即可。 方式二：Linux端启动 /etc/init.d/xrdpstart，Windows 端通过远程桌面连接127.0.0.1:3390 即可显示桌面。">
+<meta property="og:description" content="WSL 显示桌面总结起来有两种方式在 Windows 上显示 Linux 桌面，Ubuntu和Kali都没问题。 方式一：Windows端运行 Xserver 程序如 VcXsrv，Linux 端设置 DISPLAY=:0.0并运行xfce4-session即可。 方式二：Linux端启动 /etc/init.d/xrdpstart，Windows 端通过远程桌面连接127.0.0.1:3390">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://zjueducn-my.sharepoint.com/personal/wfeng_zju_edu_cn/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Fwfeng%5Fzju%5Fedu%5Fcn%2FDocuments%2FPictures%2Fweb%2Fubuntu%20vcxsrv%2Epng">
-<meta property="og:image" content="https://zjueducn-my.sharepoint.com/personal/wfeng_zju_edu_cn/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Fwfeng%5Fzju%5Fedu%5Fcn%2FDocuments%2FPictures%2Fweb%2Fkali%20xrdp%2Epng">
-<meta property="og:updated_time" content="2018-03-08T06:19:12.872Z">
+<meta property="og:image" content="http://storage.live.com/items/ACFF3787184B717C!18030:/ubuntu vcxsrv.png">
+<meta property="og:image" content="http://storage.live.com/items/ACFF3787184B717C!18029:/kali xrdp.png">
+<meta property="og:updated_time" content="2018-03-08T07:33:31.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WSL display desktop">
-<meta name="twitter:description" content="WSL 显示桌面总结起来有两种方式在 Windows 上显示 Linux 桌面。 方式一：Windows端运行 Xserver 程序如 VcXsrv，Linux 端设置 DISPLAY=:0.0并运行xfce4-session即可。 方式二：Linux端启动 /etc/init.d/xrdpstart，Windows 端通过远程桌面连接127.0.0.1:3390 即可显示桌面。">
-<meta name="twitter:image" content="https://zjueducn-my.sharepoint.com/personal/wfeng_zju_edu_cn/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Fwfeng%5Fzju%5Fedu%5Fcn%2FDocuments%2FPictures%2Fweb%2Fubuntu%20vcxsrv%2Epng">
+<meta name="twitter:description" content="WSL 显示桌面总结起来有两种方式在 Windows 上显示 Linux 桌面，Ubuntu和Kali都没问题。 方式一：Windows端运行 Xserver 程序如 VcXsrv，Linux 端设置 DISPLAY=:0.0并运行xfce4-session即可。 方式二：Linux端启动 /etc/init.d/xrdpstart，Windows 端通过远程桌面连接127.0.0.1:3390">
+<meta name="twitter:image" content="http://storage.live.com/items/ACFF3787184B717C!18030:/ubuntu vcxsrv.png">
   
     <link rel="alternate" href="/atom.xml" title="Feng Wei&#39;s Website" type="application/atom+xml">
   
@@ -99,16 +99,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="WSL-显示桌面"><a href="#WSL-显示桌面" class="headerlink" title="WSL 显示桌面"></a>WSL 显示桌面</h1><p>总结起来有两种方式在 Windows 上显示 Linux 桌面。</p>
+        <h1 id="WSL-显示桌面"><a href="#WSL-显示桌面" class="headerlink" title="WSL 显示桌面"></a>WSL 显示桌面</h1><p>总结起来有两种方式在 Windows 上显示 Linux 桌面，Ubuntu和Kali都没问题。</p>
 <p>方式一：Windows端运行 Xserver 程序如 VcXsrv，Linux 端设置 DISPLAY=:0.0并运行xfce4-session即可。</p>
 <p>方式二：Linux端启动 /etc/init.d/xrdpstart，Windows 端通过远程桌面连接127.0.0.1:3390 即可显示桌面。</p>
-<p><img src="https://zjueducn-my.sharepoint.com/personal/wfeng_zju_edu_cn/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Fwfeng%5Fzju%5Fedu%5Fcn%2FDocuments%2FPictures%2Fweb%2Fubuntu%20vcxsrv%2Epng" alt="ubuntu vcxsrv"></p>
-<p><img src="https://zjueducn-my.sharepoint.com/personal/wfeng_zju_edu_cn/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Fwfeng%5Fzju%5Fedu%5Fcn%2FDocuments%2FPictures%2Fweb%2Fkali%20xrdp%2Epng" alt="kali xrdp"></p>
+<p><img src="http://storage.live.com/items/ACFF3787184B717C!18030:/ubuntu vcxsrv.png" alt="ubuntu vcxsrv"></p>
+<p><img src="http://storage.live.com/items/ACFF3787184B717C!18029:/kali xrdp.png" alt="kali xrdp"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/03/08/WSL-display-desktop/" data-id="cjei4i4k8000938ebgmoxy2ux" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/03/08/WSL-display-desktop/" data-id="cjei6x6pg000888eb7ppxm8uh" class="article-share-link">Share</a>
       
       
     </footer>
