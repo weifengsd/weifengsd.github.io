@@ -104,7 +104,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/06/24/math-support/" data-id="cjis9o43m000eqcebweqt5a16" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/06/24/math-support/" data-id="cjisamvkx000af8eb1z9gbvvd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -147,7 +147,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/03/08/WSL-display-desktop/" data-id="cjis9o43g000cqcebb7sy4sem" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/03/08/WSL-display-desktop/" data-id="cjisamvkw0009f8eboc6uzzmo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -187,7 +187,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/01/14/Underwater-Acoustic-Communications/" data-id="cjis9o43d000bqcebt2f2htof" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/01/14/Underwater-Acoustic-Communications/" data-id="cjisamvkz000df8ebuekvwsg6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -227,7 +227,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/01/14/Communications/" data-id="cjis9o4250001qcebohyshbso" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/01/14/Communications/" data-id="cjisamvks0006f8ebyeckpbl3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -267,7 +267,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/01/14/Coding/" data-id="cjis9o42y0007qcebktadwh50" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/01/14/Coding/" data-id="cjisamvkg0003f8eb9amcenht" class="article-share-link">Share</a>
       
       
     </footer>
@@ -387,7 +387,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/01/14/snippets/" data-id="cjis9o43t000fqcebwu3vlb58" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/01/14/snippets/" data-id="cjisamvkt0007f8eb6wy4d9i9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -427,7 +427,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/01/14/Signal-Processing/" data-id="cjis9o43b000aqcebdgt9zh8m" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/01/14/Signal-Processing/" data-id="cjisamvkp0005f8ebcddua50k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -467,7 +467,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/01/14/Acoustics/" data-id="cjis9o42f0002qceb73ktpy01" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/01/14/Acoustics/" data-id="cjisamvkd0002f8ebtkhlpat1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -530,7 +530,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/01/14/MarkNotes_README/" data-id="cjis9o4380008qcebu0uhuihp" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/01/14/MarkNotes_README/" data-id="cjisamvk30001f8eb2o900zzi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -637,23 +637,21 @@ ga('send', 'pageview');
 
 <script src="/js/script.js"></script>
 
-  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  </div>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
 </script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="custom_mathjax_source">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
