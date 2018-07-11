@@ -3,18 +3,19 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>冯玮的博客</title>
+  <title>压缩感知波束形成（Compressive beamforming） | 冯玮的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="分享知识与兴趣">
-<meta property="og:type" content="website">
-<meta property="og:title" content="冯玮的博客">
-<meta property="og:url" content="http://fwzju.com/index.html">
+  <meta name="description" content="冯玮（&amp;#119;&amp;#x66;&amp;#101;&amp;#110;&amp;#103;&amp;#64;&amp;#x7a;&amp;#x6a;&amp;#x75;&amp;#46;&amp;#x65;&amp;#100;&amp;#x75;&amp;#x2e;&amp;#99;&amp;#110;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提">
+<meta property="og:type" content="article">
+<meta property="og:title" content="压缩感知波束形成（Compressive beamforming）">
+<meta property="og:url" content="http://fwzju.com/2018/07/11/Compressive-beamforming/index.html">
 <meta property="og:site_name" content="冯玮的博客">
-<meta property="og:description" content="分享知识与兴趣">
+<meta property="og:description" content="冯玮（&amp;#119;&amp;#x66;&amp;#101;&amp;#110;&amp;#103;&amp;#64;&amp;#x7a;&amp;#x6a;&amp;#x75;&amp;#46;&amp;#x65;&amp;#100;&amp;#x75;&amp;#x2e;&amp;#99;&amp;#110;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-11T13:49:07.374Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="冯玮的博客">
-<meta name="twitter:description" content="分享知识与兴趣">
+<meta name="twitter:title" content="压缩感知波束形成（Compressive beamforming）">
+<meta name="twitter:description" content="冯玮（&amp;#119;&amp;#x66;&amp;#101;&amp;#110;&amp;#103;&amp;#64;&amp;#x7a;&amp;#x6a;&amp;#x75;&amp;#46;&amp;#x65;&amp;#100;&amp;#x75;&amp;#x2e;&amp;#99;&amp;#110;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提">
   
   
     <link rel="icon" href="/favicon.png">
@@ -74,9 +75,7 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Compressive-beamforming" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Compressive-beamforming" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/11/Compressive-beamforming/" class="article-date">
   <time datetime="2018-07-11T07:17:14.000Z" itemprop="datePublished">2018-07-11</time>
@@ -93,8 +92,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/11/Compressive-beamforming/">压缩感知波束形成（Compressive beamforming）</a>
+    <h1 class="article-title" itemprop="name">
+      压缩感知波束形成（Compressive beamforming）
     </h1>
   
 
@@ -127,197 +126,19 @@ ga('send', 'pageview');
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-math-support" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/24/math-support/" class="article-date">
-  <time datetime="2018-06-24T03:04:17.000Z" itemprop="datePublished">2018-06-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/24/math-support/">Test Math Support</a>
-    </h1>
+    <a href="/2018/06/24/math-support/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Test Math Support</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>$$ \begin{eqnarray} \nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \ \nabla\cdot\vec{B} &amp;=&amp; 0 \ \nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \ \nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray} $$ </p>
-<p>$a^2+\sqrt{b}=\rho$</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/06/24/math-support/" data-id="cjjh6bstt000574ebylh00kqb" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-WSL-display-desktop" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/08/WSL-display-desktop/" class="article-date">
-  <time datetime="2018-03-08T06:08:40.000Z" itemprop="datePublished">2018-03-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/08/WSL-display-desktop/">WSL display desktop</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="WSL-显示桌面"><a href="#WSL-显示桌面" class="headerlink" title="WSL 显示桌面"></a>WSL 显示桌面</h1><p>总结起来有两种方式在 Windows 上显示 Linux 桌面，Ubuntu和Kali都没问题。</p>
-<p>方式一：Windows端运行 Xserver 程序如 VcXsrv，Linux 端设置 DISPLAY=:0.0并运行xfce4-session即可。</p>
-<p>方式二：Linux端启动 /etc/init.d/xrdpstart，Windows 端通过远程桌面连接127.0.0.1:3390 即可显示桌面。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/03/08/WSL-display-desktop/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/03/08/WSL-display-desktop/" data-id="cjjh6bsu6000874eb8u0eajmy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-snippets" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/14/snippets/" class="article-date">
-  <time datetime="2018-01-14T07:24:45.000Z" itemprop="datePublished">2018-01-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/开发/">开发</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/14/snippets/">Snippets</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>经常用到的片段保存至 Snippets 文件夹（或子文件夹）下，然后采用 snipster publish 命令生成对应编辑器的 snippet.</p>
-<p>Snippet 的格式：</p>
-<ul>
-<li>the <strong>file name</strong> is the prefix for the snippet.</li>
-<li>the <strong>file extension</strong> is the language scope for the snippet. 适用于多种语言在这些语言之间添加+号。</li>
-<li>the <strong>file content</strong> is the body of the snippet, exactly the content that appears after you type the prefix and hit ‘tab’ (minus the tab stops and placeholders).</li>
-</ul>
-<p>本文档为 Snippets 的简明列表。</p>
-<p>遗憾的是缺少 <strong>file description</strong> 功能，后续自己修改这部分功能，将 snippet 的第一条注释作为 description.</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/01/14/snippets/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/01/14/snippets/" data-id="cjjh6bsub000974eb1qn74rbt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-MarkNotes_README" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/14/MarkNotes_README/" class="article-date">
-  <time datetime="2018-01-14T02:20:53.000Z" itemprop="datePublished">2018-01-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/开发/">开发</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/14/MarkNotes_README/">MarkNotes</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Use markdown to write notes for:</p>
-<ol>
-<li>easy to write, do not need to bother to the format;</li>
-<li>easy to reuse the resources including equations, codes, figures et al.;</li>
-<li>easy to read.</li>
-</ol>
-<p>将创作初期的文档用Markdown格式编写，并汇总在MarkNotes文件夹下。如此可以解决Markdown插入的资源分散的问题，同时也方便后续的修改。</p>
-<p>用于准备正是文档，而非备忘录。</p>
-<p>Markdown 擅长记录的内容：公式、在线图片、代码片段及类似 Markdown 语言绘制的图形。这些正好可以弥补 OneNote 的不足。因此，我将 MarkNote 作为 OneNote 的一个补充。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/01/14/MarkNotes_README/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/01/14/MarkNotes_README/" data-id="cjjh6bstn000374ebdpbdnteq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
