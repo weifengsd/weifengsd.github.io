@@ -5,17 +5,17 @@
   
   <title>压缩感知波束形成（Compressive beamforming） | 冯玮的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="冯玮（&amp;#x77;&amp;#102;&amp;#101;&amp;#110;&amp;#x67;&amp;#x40;&amp;#x7a;&amp;#x6a;&amp;#x75;&amp;#46;&amp;#101;&amp;#x64;&amp;#x75;&amp;#46;&amp;#x63;&amp;#x6e;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于">
+  <meta name="description" content="冯玮（&amp;#119;&amp;#x66;&amp;#101;&amp;#x6e;&amp;#103;&amp;#x40;&amp;#x7a;&amp;#x6a;&amp;#117;&amp;#46;&amp;#x65;&amp;#100;&amp;#117;&amp;#46;&amp;#x63;&amp;#110;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于">
 <meta property="og:type" content="article">
 <meta property="og:title" content="压缩感知波束形成（Compressive beamforming）">
 <meta property="og:url" content="http://fwzju.com/2018/07/11/Compressive-beamforming/index.html">
 <meta property="og:site_name" content="冯玮的博客">
-<meta property="og:description" content="冯玮（&amp;#x77;&amp;#102;&amp;#101;&amp;#110;&amp;#x67;&amp;#x40;&amp;#x7a;&amp;#x6a;&amp;#x75;&amp;#46;&amp;#101;&amp;#x64;&amp;#x75;&amp;#46;&amp;#x63;&amp;#x6e;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于">
+<meta property="og:description" content="冯玮（&amp;#119;&amp;#x66;&amp;#101;&amp;#x6e;&amp;#103;&amp;#x40;&amp;#x7a;&amp;#x6a;&amp;#117;&amp;#46;&amp;#x65;&amp;#100;&amp;#117;&amp;#46;&amp;#x63;&amp;#110;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-12T01:42:39.266Z">
+<meta property="og:updated_time" content="2018-07-12T01:54:13.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="压缩感知波束形成（Compressive beamforming）">
-<meta name="twitter:description" content="冯玮（&amp;#x77;&amp;#102;&amp;#101;&amp;#110;&amp;#x67;&amp;#x40;&amp;#x7a;&amp;#x6a;&amp;#x75;&amp;#46;&amp;#101;&amp;#x64;&amp;#x75;&amp;#46;&amp;#x63;&amp;#x6e;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于">
+<meta name="twitter:description" content="冯玮（&amp;#119;&amp;#x66;&amp;#101;&amp;#x6e;&amp;#103;&amp;#x40;&amp;#x7a;&amp;#x6a;&amp;#117;&amp;#46;&amp;#x65;&amp;#100;&amp;#117;&amp;#46;&amp;#x63;&amp;#110;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于">
   
   
     <link rel="icon" href="/favicon.png">
@@ -101,11 +101,11 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#x77;&#102;&#101;&#110;&#x67;&#x40;&#x7a;&#x6a;&#x75;&#46;&#101;&#x64;&#x75;&#46;&#x63;&#x6e;">&#x77;&#102;&#101;&#110;&#x67;&#x40;&#x7a;&#x6a;&#x75;&#46;&#101;&#x64;&#x75;&#46;&#x63;&#x6e;</a>）</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#119;&#x66;&#101;&#x6e;&#103;&#x40;&#x7a;&#x6a;&#117;&#46;&#x65;&#100;&#117;&#46;&#x63;&#110;">&#119;&#x66;&#101;&#x6e;&#103;&#x40;&#x7a;&#x6a;&#117;&#46;&#x65;&#100;&#117;&#46;&#x63;&#110;</a>）</p>
 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。</p>
 <p>采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提高对DOA的分辨能力。压缩感知方法利用的是信号自身的稀疏特性，能够使用少量基本信号的线性组合表示一目标信号，以低于奈奎斯特采样率对信号进行采样。然后通过解凸优化问题从这些较少的采样中恢复或重构原始信号。</p>
 <p>压缩感知波束形成方法相比传统方法，具有更高的DOA分辨力。但是该方法的性能还与许多因素相关，比如接收信号的相关性、单个片段或者多个片段信号、接收阵的结构、阵元的间距等。</p>
-<h2 id="压缩感知方法"><a href="#压缩感知方法" class="headerlink" title="压缩感知方法"></a>压缩感知方法</h2><p>未知信号向量$\bf{x}$和测量数据向量$\mathbf{y}$具有如下线性关系<br>$$<br>\bf{y} = \bf{A} \bf{x}<br>$$<br>其中$\bf{A}=\bf{\Psi} \bf{\Phi}$为字典矩阵，包含感知矩阵$\bf{\Psi}: M \times N$和表示矩阵$\bf{\Phi}: N \times N$两部分组成，$M &lt; N$。</p>
+<h2 id="压缩感知方法"><a href="#压缩感知方法" class="headerlink" title="压缩感知方法"></a>压缩感知方法</h2><p>未知信号向量$\bf{x}$和测量数据向量$\mathbf{y}$具有如下线性关系<br>$$<br>\bf{y} = \bf{A} \bf{x}<br>$$<br>其中$\bf{A}=\bf{\Psi} \bf{\Phi}$为字典矩阵，包含感知矩阵${\bf \Psi}_{M \times N}$和表示矩阵${\bf\Phi}_{N \times N}$两部分组成，$M &lt; N$。</p>
 <p>Xenaki <em>et al.</em> 在压缩感知的框架下，详细地探讨了DOA估计问题 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="A. Xenaki, P. Gerstoft, and K. Mosegaard, “Compressive beamforming,” *The Journal of the Acoustical Society of America*, vol. 136, no. 1, pp. 260–271, Jul. 2014. [DOI](https://doi.org/10.1121/1.4883360)    
 ">[1]</span></a></sup>。文中指出应用压缩感知方法求解欠定问题时依赖两个条件，一是需要精确掌握信号的稀疏性，二是感知基与表示基要足够不相关。其次，该文介绍了压缩感知和凸优化的基本原理，采用 cvx 工具包计算优化目标函数。</p>
 <p>Gerstoft <em>et al.</em>研究了针对针对多个测量数据的压缩感知波束形成方法，分别采用了LASSO（least absolute shrinkage and selection operator）<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="P. Gerstoft, A. Xenaki, and C. F. Mecklenbräuker, “Multiple and single snapshot compressive beamforming,” *The Journal of the Acoustical Society of America*, vol. 138, no. 4, pp. 2003–2014, Oct. 2015. [DOI](http://dx.doi.org/10.1121/1.4929941)
@@ -120,7 +120,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/07/11/Compressive-beamforming/" data-id="cjjhw2ka70000dkebd61lgir9" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/07/11/Compressive-beamforming/" data-id="cjjhwhion0001nwebl5nkkffm" class="article-share-link">Share</a>
       
       
     </footer>
