@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>压缩感知（Compressive Sensing） | 冯玮的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="引言一种建立在稀疏特性基础上的新型的采样理论。 研究历史石光明等综述了CS理论框架及关键技术问题，并着重介绍了信号稀疏变换、观测矩阵设计和重构算法三个方面的最新进展, 评述了其中的公开问题, 对研究中现存的难点问题进行了探讨, 最后介绍了 CS 理论的应用领域 [1]。 Candes[2]，Romberg，Tao[3]和Donoho[4]等人构造了具体的算法。 研究问题基础可压缩信号向量${\bf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="压缩感知（Compressive Sensing）">
+<meta property="og:url" content="http://fwzju.com/2018/07/12/Compressive-Sensing/index.html">
+<meta property="og:site_name" content="冯玮的博客">
+<meta property="og:description" content="引言一种建立在稀疏特性基础上的新型的采样理论。 研究历史石光明等综述了CS理论框架及关键技术问题，并着重介绍了信号稀疏变换、观测矩阵设计和重构算法三个方面的最新进展, 评述了其中的公开问题, 对研究中现存的难点问题进行了探讨, 最后介绍了 CS 理论的应用领域 [1]。 Candes[2]，Romberg，Tao[3]和Donoho[4]等人构造了具体的算法。 研究问题基础可压缩信号向量${\bf">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-12T13:30:55.365Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="压缩感知（Compressive Sensing）">
+<meta name="twitter:description" content="引言一种建立在稀疏特性基础上的新型的采样理论。 研究历史石光明等综述了CS理论框架及关键技术问题，并着重介绍了信号稀疏变换、观测矩阵设计和重构算法三个方面的最新进展, 评述了其中的公开问题, 对研究中现存的难点问题进行了探讨, 最后介绍了 CS 理论的应用领域 [1]。 Candes[2]，Romberg，Tao[3]和Donoho[4]等人构造了具体的算法。 研究问题基础可压缩信号向量${\bf">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-53733221-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+</head>
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">冯玮的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/About">关于</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fwzju.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Compressive-Sensing" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/12/Compressive-Sensing/" class="article-date">
+  <time datetime="2018-07-12T11:22:32.000Z" itemprop="datePublished">2018-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/研究/">研究</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      压缩感知（Compressive Sensing）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>一种建立在稀疏特性基础上的新型的采样理论。</p>
+<h2 id="研究历史"><a href="#研究历史" class="headerlink" title="研究历史"></a>研究历史</h2><p>石光明等综述了CS理论框架及关键技术问题，并着重介绍了信号稀疏变换、观测矩阵设计和重构算法三个方面的最新进展, 评述了其中的公开问题, 对研究中现存的难点问题进行了探讨, 最后介绍了 CS 理论的应用领域 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="石光明, 刘丹华, 高大化, 刘哲, 林杰, and 王良君, “压缩感知理论及其研究进展,” 电子学报, vol. 37, no. 5, pp. 1070–1081, 2009. 
+">[1]</span></a></sup>。</p>
+<p>Candes<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="E. J. Candes and M. B. Wakin, “An Introduction To Compressive Sampling,” *IEEE Signal Processing Magazine*, vol. 25, no. 2, pp. 21–30, Mar. 2008.
+">[2]</span></a></sup>，Romberg，Tao<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="E. J. Candes and T. Tao, “Near-Optimal Signal Recovery From Random Projections: Universal Encoding Strategies?,” *IEEE Transactions on Information Theory*, vol. 52, no. 12, pp. 5406–5425, Dec. 2006.
+">[3]</span></a></sup>和Donoho<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="D. L. Donoho, “Compressed sensing,” *IEEE Transactions on Information Theory*, vol. 52, no. 4, pp. 1289–1306, Apr. 2006.
+">[4]</span></a></sup>等人构造了具体的算法。</p>
+<h2 id="研究问题"><a href="#研究问题" class="headerlink" title="研究问题"></a>研究问题</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><p>可压缩信号向量${\bf x}_{M \times 1}$和压缩后信号向量${\mathbf y}_{N \times 1}$具有如下线性关系<br>$$<br>\bf{y} = \bf{A} \bf{x},<br>$$<br>其中$\bf{A}=\bf{\Psi} \bf{\Phi}$为字典矩阵，包含感知矩阵${\bf \Psi}_{M \times N}$和表示矩阵${\bf\Phi}_{N \times N}$两部分组成，并且$M &lt; N$，${\mathbf y}$实现了对${\mathbf x}$的稀疏表示。若$\bf{A}$满足约束等距条件，则可由观测信号${\mathbf y}$重构源信号${\mathbf x}$。</p>
+<h3 id="感知矩阵"><a href="#感知矩阵" class="headerlink" title="感知矩阵"></a>感知矩阵</h3><p>如何设计感知矩阵${\bf \Psi}$</p>
+<h3 id="稀疏矩阵方程求解"><a href="#稀疏矩阵方程求解" class="headerlink" title="稀疏矩阵方程求解"></a>稀疏矩阵方程求解</h3><p>求解稀疏矩阵方程，重构源信号，重构算法可分为三大类<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="石光明, 刘丹华, 高大化, 刘哲, 林杰, and 王良君, “压缩感知理论及其研究进展,” 电子学报, vol. 37, no. 5, pp. 1070–1081, 2009. 
+">[1]</span></a></sup>：</p>
+<ol>
+<li><p>贪婪追踪算法：匹配追踪（Matching Pursuit, MP）算法，收敛速度快，不是全局最优解。改进算法：正交匹配追踪（OMP）。</p>
+</li>
+<li><p>凸松弛法：基追踪（Basis Pursuit, BP）算法，具有全局最优解，计算复杂度高。内点法、梯度投影法。</p>
+</li>
+<li><p>组合算法。</p>
+</li>
+</ol>
+<h3 id="感知矩阵与恢复性能关系"><a href="#感知矩阵与恢复性能关系" class="headerlink" title="感知矩阵与恢复性能关系"></a>感知矩阵与恢复性能关系</h3><p>感知矩阵与稀疏变换基的不相干特性</p>
+<p>感知矩阵列之间的相干性<sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="Z. Zhang and B. D. Rao, “Extension of SBL Algorithms for the Recovery of Block Sparse Signals With Intra-Block Correlation,” *IEEE Trans Signal Process*, vol. 61, no. 8, pp. 2009–2015, Apr. 2013.
+">[5]</span></a></sup></p>
+<h2 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h2><p>声纳<sup id="fnref:6"><a href="#fn:6" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="A. Xenaki, P. Gerstoft, and K. Mosegaard, “Compressive beamforming,” *The Journal of the Acoustical Society of America*, vol. 136, no. 1, pp. 260–271, Jul. 2014. [DOI](https://doi.org/10.1121/1.4883360)    ">[6]</span></a></sup>与雷达</p>
+<p>图像采集</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">石光明, 刘丹华, 高大化, 刘哲, 林杰, and 王良君, “压缩感知理论及其研究进展,” 电子学报, vol. 37, no. 5, pp. 1070–1081, 2009.<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">E. J. Candes and M. B. Wakin, “An Introduction To Compressive Sampling,” <em>IEEE Signal Processing Magazine</em>, vol. 25, no. 2, pp. 21–30, Mar. 2008.<a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">E. J. Candes and T. Tao, “Near-Optimal Signal Recovery From Random Projections: Universal Encoding Strategies?,” <em>IEEE Transactions on Information Theory</em>, vol. 52, no. 12, pp. 5406–5425, Dec. 2006.<a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">D. L. Donoho, “Compressed sensing,” <em>IEEE Transactions on Information Theory</em>, vol. 52, no. 4, pp. 1289–1306, Apr. 2006.<a href="#fnref:4" rev="footnote"> ↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Z. Zhang and B. D. Rao, “Extension of SBL Algorithms for the Recovery of Block Sparse Signals With Intra-Block Correlation,” <em>IEEE Trans Signal Process</em>, vol. 61, no. 8, pp. 2009–2015, Apr. 2013.<a href="#fnref:5" rev="footnote"> ↩</a></span></li><li id="fn:6"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">6.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">A. Xenaki, P. Gerstoft, and K. Mosegaard, “Compressive beamforming,” <em>The Journal of the Acoustical Society of America</em>, vol. 136, no. 1, pp. 260–271, Jul. 2014. <a href="https://doi.org/10.1121/1.4883360" target="_blank" rel="noopener">DOI</a><a href="#fnref:6" rev="footnote"> ↩</a></span></li></ol></div></div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fwzju.com/2018/07/12/Compressive-Sensing/" data-id="cjjilaich000080ebtpgkonql" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/11/Compressive-beamforming/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">压缩感知波束形成（Compressive beamforming）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/研究/">研究</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/12/Compressive-Sensing/">压缩感知（Compressive Sensing）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/11/Compressive-beamforming/">压缩感知波束形成（Compressive beamforming）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/24/math-support/">Test Math Support</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/08/WSL-display-desktop/">WSL display desktop</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/14/snippets/">Snippets</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次 <br />
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 冯玮<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/About" class="mobile-nav-link">关于</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
