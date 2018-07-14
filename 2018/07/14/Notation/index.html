@@ -3,22 +3,19 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>WSL display desktop | 冯玮的博客</title>
+  <title>数学符号（Notation） | 冯玮的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="WSL 显示桌面总结起来有两种方式在 Windows 上显示 Linux 桌面，Ubuntu和Kali都没问题。 方式一：Windows端运行 Xserver 程序如 VcXsrv，Linux 端设置 DISPLAY=:0.0并运行xfce4-session即可。 方式二：Linux端启动 /etc/init.d/xrdpstart，Windows 端通过远程桌面连接127.0.0.1:3390">
+  <meta name="description" content="冯玮（&amp;#119;&amp;#102;&amp;#101;&amp;#110;&amp;#x67;&amp;#64;&amp;#x7a;&amp;#x6a;&amp;#x75;&amp;#x2e;&amp;#101;&amp;#100;&amp;#x75;&amp;#x2e;&amp;#99;&amp;#110;） 定义常用的数学符号含义，以及常用系统的关系式。    标量符号 含义     $t$ 时间   $n$ 离散时间序列   $f$ 频率   $\omega$ 角频率   $r$ 距离   $z$ 深度">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WSL display desktop">
-<meta property="og:url" content="http://fwzju.com/2018/03/08/WSL-display-desktop/index.html">
+<meta property="og:title" content="数学符号（Notation）">
+<meta property="og:url" content="http://fwzju.com/2018/07/14/Notation/index.html">
 <meta property="og:site_name" content="冯玮的博客">
-<meta property="og:description" content="WSL 显示桌面总结起来有两种方式在 Windows 上显示 Linux 桌面，Ubuntu和Kali都没问题。 方式一：Windows端运行 Xserver 程序如 VcXsrv，Linux 端设置 DISPLAY=:0.0并运行xfce4-session即可。 方式二：Linux端启动 /etc/init.d/xrdpstart，Windows 端通过远程桌面连接127.0.0.1:3390">
+<meta property="og:description" content="冯玮（&amp;#119;&amp;#102;&amp;#101;&amp;#110;&amp;#x67;&amp;#64;&amp;#x7a;&amp;#x6a;&amp;#x75;&amp;#x2e;&amp;#101;&amp;#100;&amp;#x75;&amp;#x2e;&amp;#99;&amp;#110;） 定义常用的数学符号含义，以及常用系统的关系式。    标量符号 含义     $t$ 时间   $n$ 离散时间序列   $f$ 频率   $\omega$ 角频率   $r$ 距离   $z$ 深度">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://c8zsla.bn.files.1drv.com/y4mmlvIUjykSooXBa82w7DL4JXpD0C-hNFfHlOzl41NRNQDUVknFeqpzpwAhx_T3LW_k3kLdPfSGlTuVTOcrPoS3_JuhsZTlXgYrwv7aLB1DtstGSmg32fJm5n4jzpDw_nq2ozorUPdHtBZqHkqIrVqL4aq9_1U_iTXb3RB91STWmcfT0Eb1moWTt80yki6ZWEGiRGERe8w74m21q_6BzzT-Q?width=790&height=730&cropmode=none">
-<meta property="og:image" content="https://dmzjla.bn.files.1drv.com/y4mWNfC3zb4i-pIcnBXj9SYzDSzDk07pm_bEnvvXcTnRaPhZibebi2RYHVPmb6nsPIGkIXYKKBcgk6u8Kg9MGGKCVjXtxoThnuMo-yXG59qWk6g0GLq01Qfx-9hPzR5iQAQiabLG8oogoUIHj5gYJXuWKl7bH1wJBB7zetYKpERnpk0sjZCGkQtIYAGG-snwNksdDT_c8QygHpe-6GsZkBmbw?width=888&height=738&cropmode=none">
-<meta property="og:updated_time" content="2018-07-12T13:38:07.718Z">
+<meta property="og:updated_time" content="2018-07-14T09:02:51.955Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WSL display desktop">
-<meta name="twitter:description" content="WSL 显示桌面总结起来有两种方式在 Windows 上显示 Linux 桌面，Ubuntu和Kali都没问题。 方式一：Windows端运行 Xserver 程序如 VcXsrv，Linux 端设置 DISPLAY=:0.0并运行xfce4-session即可。 方式二：Linux端启动 /etc/init.d/xrdpstart，Windows 端通过远程桌面连接127.0.0.1:3390">
-<meta name="twitter:image" content="https://c8zsla.bn.files.1drv.com/y4mmlvIUjykSooXBa82w7DL4JXpD0C-hNFfHlOzl41NRNQDUVknFeqpzpwAhx_T3LW_k3kLdPfSGlTuVTOcrPoS3_JuhsZTlXgYrwv7aLB1DtstGSmg32fJm5n4jzpDw_nq2ozorUPdHtBZqHkqIrVqL4aq9_1U_iTXb3RB91STWmcfT0Eb1moWTt80yki6ZWEGiRGERe8w74m21q_6BzzT-Q?width=790&height=730&cropmode=none">
+<meta name="twitter:title" content="数学符号（Notation）">
+<meta name="twitter:description" content="冯玮（&amp;#119;&amp;#102;&amp;#101;&amp;#110;&amp;#x67;&amp;#64;&amp;#x7a;&amp;#x6a;&amp;#x75;&amp;#x2e;&amp;#101;&amp;#100;&amp;#x75;&amp;#x2e;&amp;#99;&amp;#110;） 定义常用的数学符号含义，以及常用系统的关系式。    标量符号 含义     $t$ 时间   $n$ 离散时间序列   $f$ 频率   $\omega$ 角频率   $r$ 距离   $z$ 深度">
   
   
     <link rel="icon" href="/favicon.png">
@@ -78,14 +75,14 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-WSL-display-desktop" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Notation" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/08/WSL-display-desktop/" class="article-date">
-  <time datetime="2018-03-08T06:08:40.000Z" itemprop="datePublished">2018-03-08</time>
+    <a href="/2018/07/14/Notation/" class="article-date">
+  <time datetime="2018-07-14T07:12:22.000Z" itemprop="datePublished">2018-07-14</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/分享/">分享</a>
+    <a class="article-category-link" href="/categories/写作/">写作</a>
   </div>
 
   </div>
@@ -96,7 +93,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      WSL display desktop
+      数学符号（Notation）
     </h1>
   
 
@@ -104,17 +101,254 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="WSL-显示桌面"><a href="#WSL-显示桌面" class="headerlink" title="WSL 显示桌面"></a>WSL 显示桌面</h1><p>总结起来有两种方式在 Windows 上显示 Linux 桌面，Ubuntu和Kali都没问题。</p>
-<p>方式一：Windows端运行 Xserver 程序如 VcXsrv，Linux 端设置 DISPLAY=:0.0并运行xfce4-session即可。</p>
-<p>方式二：Linux端启动 /etc/init.d/xrdpstart，Windows 端通过远程桌面连接127.0.0.1:3390 即可显示桌面。</p>
-<a id="more"></a>
-<p><img src="https://c8zsla.bn.files.1drv.com/y4mmlvIUjykSooXBa82w7DL4JXpD0C-hNFfHlOzl41NRNQDUVknFeqpzpwAhx_T3LW_k3kLdPfSGlTuVTOcrPoS3_JuhsZTlXgYrwv7aLB1DtstGSmg32fJm5n4jzpDw_nq2ozorUPdHtBZqHkqIrVqL4aq9_1U_iTXb3RB91STWmcfT0Eb1moWTt80yki6ZWEGiRGERe8w74m21q_6BzzT-Q?width=790&amp;height=730&amp;cropmode=none" alt="ubuntu vcxsrv"></p>
-<p><img src="https://dmzjla.bn.files.1drv.com/y4mWNfC3zb4i-pIcnBXj9SYzDSzDk07pm_bEnvvXcTnRaPhZibebi2RYHVPmb6nsPIGkIXYKKBcgk6u8Kg9MGGKCVjXtxoThnuMo-yXG59qWk6g0GLq01Qfx-9hPzR5iQAQiabLG8oogoUIHj5gYJXuWKl7bH1wJBB7zetYKpERnpk0sjZCGkQtIYAGG-snwNksdDT_c8QygHpe-6GsZkBmbw?width=888&amp;height=738&amp;cropmode=none" alt="kali xrdp"></p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#119;&#102;&#101;&#110;&#x67;&#64;&#x7a;&#x6a;&#x75;&#x2e;&#101;&#100;&#x75;&#x2e;&#99;&#110;">&#119;&#102;&#101;&#110;&#x67;&#64;&#x7a;&#x6a;&#x75;&#x2e;&#101;&#100;&#x75;&#x2e;&#99;&#110;</a>）</p>
+<p>定义常用的数学符号含义，以及常用系统的关系式。</p>
+<table>
+<thead>
+<tr>
+<th>标量符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$t$</td>
+<td>时间</td>
+</tr>
+<tr>
+<td>$n$</td>
+<td>离散时间序列</td>
+</tr>
+<tr>
+<td>$f$</td>
+<td>频率</td>
+</tr>
+<tr>
+<td>$\omega$</td>
+<td>角频率</td>
+</tr>
+<tr>
+<td>$r$</td>
+<td>距离</td>
+</tr>
+<tr>
+<td>$z$</td>
+<td>深度</td>
+</tr>
+<tr>
+<td>$c$</td>
+<td>声速</td>
+</tr>
+<tr>
+<td>$\theta$</td>
+<td>到达角</td>
+</tr>
+<tr>
+<td>$m$</td>
+<td>模号</td>
+</tr>
+<tr>
+<td>$i, j$</td>
+<td>序号</td>
+</tr>
+<tr>
+<td>$k$</td>
+<td>载频序号</td>
+</tr>
+<tr>
+<td>$\mu$</td>
+<td>均值</td>
+</tr>
+<tr>
+<td>$\sigma^2$</td>
+<td>方差</td>
+</tr>
+<tr>
+<td>$h(t)$</td>
+<td>信道冲激响应</td>
+</tr>
+<tr>
+<td>$\delta (t)$</td>
+<td>脉冲信号</td>
+</tr>
+<tr>
+<td>$H(\omega)$</td>
+<td>信道传递函数</td>
+</tr>
+<tr>
+<td>${A_m}\left( {r,z} \right)$</td>
+<td>在距离$r$深度$z$处第$m$号模函数的幅度</td>
+</tr>
+<tr>
+<td>${\Psi _m}(z)$</td>
+<td>随深度$z$变化的第$m$号模函数</td>
+</tr>
+<tr>
+<td>$B$</td>
+<td>带宽</td>
+</tr>
+<tr>
+<td>$P$</td>
+<td>概率</td>
+</tr>
+<tr>
+<td>$L$</td>
+<td>似然函数，或序列长度，或片段个数</td>
+</tr>
+<tr>
+<td>$W$</td>
+<td>加权系数</td>
+</tr>
+<tr>
+<td>$N$</td>
+<td>数量，或阵元个数</td>
+</tr>
+<tr>
+<td>$M$</td>
+<td>数量，或模的个数</td>
+</tr>
+<tr>
+<td>$\Omega$</td>
+<td>频点个数</td>
+</tr>
+<tr>
+<td>$J$</td>
+<td>目标函数</td>
+</tr>
+<tr>
+<td>$x (t)$</td>
+<td>发射信号</td>
+</tr>
+<tr>
+<td>$y(t)$</td>
+<td>接收信号</td>
+</tr>
+<tr>
+<td>$n(t)$或$v(t)$</td>
+<td>噪声信号</td>
+</tr>
+<tr>
+<td>$\tau$</td>
+<td>时延</td>
+</tr>
+<tr>
+<td>$\rho$</td>
+<td>密度</td>
+</tr>
+<tr>
+<td>$\alpha$</td>
+<td>衰减系数</td>
+</tr>
+<tr>
+<td>$\eta$</td>
+<td>相关系数</td>
+</tr>
+<tr>
+<td>$\mathcal{N} \left( \mu,\sigma^2 \right)$</td>
+<td>均值$\mu$为方差为$\sigma^2$的高斯分布</td>
+</tr>
+<tr>
+<td>$\mathcal{CN} \left( 0,\sigma^2 \right)$</td>
+<td>零均值，方差为$\sigma^2$的复高斯分布</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>矢量符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\bf{x}$</td>
+<td>小写黑体字母表示向量</td>
+</tr>
+<tr>
+<td>$\bf{X}$</td>
+<td>大写黑体字母表示矩阵</td>
+</tr>
+<tr>
+<td>$\bf{\Sigma}$</td>
+<td>协方差矩阵</td>
+</tr>
+<tr>
+<td>$\mathbf{H}$</td>
+<td>Channel mixing matrix</td>
+</tr>
+<tr>
+<td>$\bf{s}$</td>
+<td>发送的符号向量</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>${( \cdot )^T}$</td>
+<td>转置</td>
+</tr>
+<tr>
+<td>${( \cdot )^*}$</td>
+<td>共轭</td>
+</tr>
+<tr>
+<td>${( \cdot )^H}$</td>
+<td>共轭转置</td>
+</tr>
+<tr>
+<td>$*$</td>
+<td>卷积</td>
+</tr>
+<tr>
+<td>$E [\cdot]$</td>
+<td>求期望</td>
+</tr>
+<tr>
+<td>$\widetilde{\bf a}$</td>
+<td>归一化</td>
+</tr>
+<tr>
+<td>$\hat{a}$</td>
+<td>$a$的估计</td>
+</tr>
+<tr>
+<td>$\text{tr} ({\bf A})$</td>
+<td>矩阵${\bf A}$的迹</td>
+</tr>
+<tr>
+<td>$({\bf A})^\dagger $</td>
+<td>矩阵${\bf A}$的伪逆</td>
+</tr>
+<tr>
+<td>$\text{Cov} (X, Y)$</td>
+<td>求两个随机变量的协方差</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="信道输入输出关系"><a href="#信道输入输出关系" class="headerlink" title="信道输入输出关系"></a>信道输入输出关系</h2><p>Time:  $y(t) = h(t) * x(t) + v(t)$</p>
+<p>Discrete Time:  $y_n = \sum_{i=0}^{N-1} h_i x_{n-i} + v_n$</p>
+<p>Vector form:  $\mathbf{y}_k = \mathbf{H} \mathbf{x}_k + \mathbf{v}_k$</p>
+<p>Frequency: $Y=HX+V$</p>
+<p>Single frequency: $Y_k=H_k X_k+V_k$</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/03/08/WSL-display-desktop/" data-id="cjjl6hqbz000et8ebs0hgntcj" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/07/14/Notation/" data-id="cjjl6hqas0001t8ebmplv967f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -123,19 +357,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2018/06/24/math-support/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Test Math Support
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/14/snippets/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/07/12/Compressive-Sensing/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Snippets</div>
+      <div class="article-nav-title">压缩感知（Compressive Sensing）</div>
     </a>
   
 </nav>
