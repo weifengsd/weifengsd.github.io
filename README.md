@@ -4,10 +4,12 @@
 
 请访问我的博客: [链接](https://fwzju.com)
 
-[联系我](mailto: wfeng@zju.edu.cn)
+联系我：<wfeng@zju.edu.cn>
+
+------
 
 For sharing my research interests, knowledges in coding and good things in my life.
 
-Please visit my website: [Website](https://fwzju.com)
+Please visit my website: [link](https://fwzju.com)
 
-[Contact Me](mailto: wfeng@zju.edu.cn)
+Contact Me: <wfeng@zju.edu.cn>
