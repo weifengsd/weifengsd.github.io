@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="冯玮的博客">
 <meta property="og:description" content="首先测试下当前Hexo对Math的支持情况：$$ \begin{eqnarray} \nabla\cdot\vec{E} &amp;amp;=&amp;amp; \frac{\rho}{\epsilon_0} \ \nabla\cdot\vec{B} &amp;amp;=&amp;amp; 0 \ \nabla\times\vec{E} &amp;amp;=&amp;amp; -\frac{\partial B}{\partial t} \ \">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-25T07:03:37.271Z">
+<meta property="og:updated_time" content="2019-01-25T07:24:19.868Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Math Support">
 <meta name="twitter:description" content="首先测试下当前Hexo对Math的支持情况：$$ \begin{eqnarray} \nabla\cdot\vec{E} &amp;amp;=&amp;amp; \frac{\rho}{\epsilon_0} \ \nabla\cdot\vec{B} &amp;amp;=&amp;amp; 0 \ \nabla\times\vec{E} &amp;amp;=&amp;amp; -\frac{\partial B}{\partial t} \ \">
@@ -102,17 +102,23 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>首先测试下当前Hexo对Math的支持情况：<br>$$ \begin{eqnarray} \nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \ \nabla\cdot\vec{B} &amp;=&amp; 0 \ \nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \ \nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray} $$ </p>
-<h2 id="安装hexo-render-mathjax"><a href="#安装hexo-render-mathjax" class="headerlink" title="安装hexo-render-mathjax"></a>安装hexo-render-mathjax</h2><pre><code>$ npm install hexo-renderer-mathjax --save
-</code></pre><p>Edit <code>_config.yml</code>:</p>
+<h2 id="安装MathJax渲染程序"><a href="#安装MathJax渲染程序" class="headerlink" title="安装MathJax渲染程序"></a>安装MathJax渲染程序</h2><pre><code>$ npm install hexo-renderer-mathjax --save
+</code></pre><p>修改文件<code>_config.yml</code>，添加内容（貌似不加也行）：</p>
 <pre><code>plugins:
 - hexo-renderer-mathjax
 </code></pre><h2 id="CDN出错"><a href="#CDN出错" class="headerlink" title="CDN出错"></a>CDN出错</h2><p>原来的CDN已不再使用，所以需要修改文件<code>\node_modules\hexo-renderer-mathjax\mathjax.html</code>这部分的注入代码。新的通过连接CDN加载MathJax的js代码为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">async</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>所以要修改文件：</p>
+<h2 id="MarkDown与MathJax渲染冲突"><a href="#MarkDown与MathJax渲染冲突" class="headerlink" title="MarkDown与MathJax渲染冲突"></a>MarkDown与MathJax渲染冲突</h2><p>添加MathJax后写几个公式发现渲染出了很多问题，原因是Hexo默认先使用hexo-renderer-marked引擎渲染MarkDown，然后再交给MathJax渲染。hexo-renderer-marked会把一些特殊的markdown符号转换为相应的html标签，比如在markdown语法中，下划线<code>_</code>代表斜体，会被转化为&lt; em&gt;标签，<code>\\</code>也会被转义成一个<code>\</code>。而类Latex格式书写的数学公式下划线<code>_</code>表示角标，<code>\\</code>表示公式换行，有特殊的含义，所以MathJax引擎在渲染数学公式的时候就会出错。<br>解决方法有人提出更换Hexo的MarkDown渲染引擎，用hexo-renderer-kramed 替换默认的hexo-renderer-marked引擎，但我看了下hexo-renderer-kramed的文档说明，如果用这个引擎的话，要改变我的MarkDown书写习惯，还是不用了，并且换了这个引擎还是没有完全解决问题。<br>最终解决方法是参考一篇博文中修改hexo-renderer-marked渲染引擎的js脚本，去掉对 <code>_</code> 和 <code>\\</code> 的转义。Hexo默认的MarkDown渲染引擎hexo-renderer-marked会调用marked模块的marked.js脚本进行最终的解释，这个脚本在Hexo安装后的node_modules\marked\lib\目录中。有两点修改：<br>针对下划线的问题，取消<code>_</code>作为斜体转义，因为marked.js中<code>*</code>也是斜体的意思，所以取消掉<code>_</code>的转义并不影响使用markdown，我平时一般不用斜体，就是用也更习惯用<code>*</code>作为斜体标记。针对marked.js与Mathjax对于个别字符二次转义的问题，我们只要不让marked.js去转义<code>\\,\{,\}</code>在MathJax中有特殊用途的字符就行了。编辑node_modules\marked\lib\marked.js 脚本，<br>【第一步】<br>将451行的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([\\`*&#123;&#125;\[\]()# +\-.!_&gt;])/,</span><br></pre></td></tr></table></figure></p>
+<p>替换为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([`*\[\]()# +\-.!_&gt;])/,</span><br></pre></td></tr></table></figure></p>
+<p>这一步取消了对<code>\\,\{,\}</code>的转义(escape)</p>
+<p>【第二步】<br>将459行的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">em: /^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure></p>
+<p>替换为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">em:/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure></p>
+<p>这一步取消了对斜体标记<code>_</code>的转义<br>这样带来一个问题就是，以后每次更换电脑，在新电脑上安装完Hexo环境后，都要手动修改<code>marked.js</code>文件。</p>
+<p>该节文字摘自：<a href="http://www.mamicode.com/info-detail-2145077.html" target="_blank" rel="noopener">http://www.mamicode.com/info-detail-2145077.html</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/06/24/math-support/" data-id="cjrbpah8g0007b4eb7kspdo24" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/06/24/math-support/" data-id="cjrbq1bfo000caceb0iy57gxn" class="article-share-link">Share</a>
       
       
     </footer>

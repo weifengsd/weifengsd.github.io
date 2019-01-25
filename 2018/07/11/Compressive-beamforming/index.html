@@ -5,17 +5,17 @@
   
   <title>压缩感知波束形成（Compressive beamforming） | 冯玮的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="冯玮（&amp;#119;&amp;#x66;&amp;#101;&amp;#x6e;&amp;#103;&amp;#64;&amp;#x7a;&amp;#x6a;&amp;#x75;&amp;#46;&amp;#101;&amp;#100;&amp;#117;&amp;#46;&amp;#99;&amp;#x6e;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提高">
+  <meta name="description" content="冯玮（&amp;#x77;&amp;#x66;&amp;#x65;&amp;#110;&amp;#x67;&amp;#64;&amp;#122;&amp;#106;&amp;#x75;&amp;#x2e;&amp;#x65;&amp;#x64;&amp;#x75;&amp;#46;&amp;#99;&amp;#110;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提">
 <meta property="og:type" content="article">
 <meta property="og:title" content="压缩感知波束形成（Compressive beamforming）">
 <meta property="og:url" content="http://fwzju.com/2018/07/11/Compressive-beamforming/index.html">
 <meta property="og:site_name" content="冯玮的博客">
-<meta property="og:description" content="冯玮（&amp;#119;&amp;#x66;&amp;#101;&amp;#x6e;&amp;#103;&amp;#64;&amp;#x7a;&amp;#x6a;&amp;#x75;&amp;#46;&amp;#101;&amp;#100;&amp;#117;&amp;#46;&amp;#99;&amp;#x6e;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提高">
+<meta property="og:description" content="冯玮（&amp;#x77;&amp;#x66;&amp;#x65;&amp;#110;&amp;#x67;&amp;#64;&amp;#122;&amp;#106;&amp;#x75;&amp;#x2e;&amp;#x65;&amp;#x64;&amp;#x75;&amp;#46;&amp;#99;&amp;#110;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-25T06:25:48.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="压缩感知波束形成（Compressive beamforming）">
-<meta name="twitter:description" content="冯玮（&amp;#119;&amp;#x66;&amp;#101;&amp;#x6e;&amp;#103;&amp;#64;&amp;#x7a;&amp;#x6a;&amp;#x75;&amp;#46;&amp;#101;&amp;#100;&amp;#117;&amp;#46;&amp;#99;&amp;#x6e;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提高">
+<meta name="twitter:description" content="冯玮（&amp;#x77;&amp;#x66;&amp;#x65;&amp;#110;&amp;#x67;&amp;#64;&amp;#122;&amp;#106;&amp;#x75;&amp;#x2e;&amp;#x65;&amp;#x64;&amp;#x75;&amp;#46;&amp;#99;&amp;#110;） 引言由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。 采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提">
   
   
     <link rel="icon" href="/favicon.png">
@@ -101,7 +101,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#119;&#x66;&#101;&#x6e;&#103;&#64;&#x7a;&#x6a;&#x75;&#46;&#101;&#100;&#117;&#46;&#99;&#x6e;">&#119;&#x66;&#101;&#x6e;&#103;&#64;&#x7a;&#x6a;&#x75;&#46;&#101;&#100;&#117;&#46;&#99;&#x6e;</a>）</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x77;&#x66;&#x65;&#110;&#x67;&#64;&#122;&#106;&#x75;&#x2e;&#x65;&#x64;&#x75;&#46;&#99;&#110;">&#x77;&#x66;&#x65;&#110;&#x67;&#64;&#122;&#106;&#x75;&#x2e;&#x65;&#x64;&#x75;&#46;&#99;&#110;</a>）</p>
 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。</p>
 <p>采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提高对DOA的分辨能力。压缩感知方法利用的是信号自身的稀疏特性，能够使用少量基本信号的线性组合表示一目标信号，以低于奈奎斯特采样率对信号进行采样。然后通过解凸优化问题从这些较少的采样中恢复或重构原始信号。</p>
 <p>压缩感知波束形成方法相比传统方法，具有更高的DOA分辨力。但是该方法的性能还与许多因素相关，比如接收信号的相关性、单个片段或者多个片段信号、接收阵的结构、阵元的间距等。</p>
@@ -120,7 +120,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/07/11/Compressive-beamforming/" data-id="cjrbpah7o0000b4ebdes5urru" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/07/11/Compressive-beamforming/" data-id="cjrbq1ber0001acebsexa5sb2" class="article-share-link">Share</a>
       
       
     </footer>
