@@ -76,6 +76,87 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-开发免费托管的静态网站" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/25/开发免费托管的静态网站/" class="article-date">
+  <time datetime="2019-01-25T01:31:58.000Z" itemprop="datePublished">2019-01-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/开发/">开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/25/开发免费托管的静态网站/">开发免费托管的静态网站</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>随着互联网的发展，搭建网站的技术门槛和使用成本都急剧降低。有如下几个痛点得到极大缓解：</p>
+<ul>
+<li>代码免费托管：Github已经取消对私有库的数量限制，网站代码可以通过Git推送到Github的库中进行托管；</li>
+<li>网站免费托管：购置实体或者虚拟服务器都需要一笔不小的开支，而采用netlify等静态网站托管则不需要任何费用，并且可以链接Github代码库实现即时修改；</li>
+<li>域名价格低廉：域名可选则的种类非常丰富，对于一般性的域名购入和使用的成本都非常的低。</li>
+<li>开源框架丰富：WordPress, Hexo等开源框架可以实现丰富多样的网站，这些框架的应用降低了网站开发的技术门槛。</li>
+</ul>
+<p>下面将讲解免费托管方式下的网站开发所使用的工具和开发流程。</p>
+<h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><ul>
+<li><a href="https://www.aliyun.com/" target="_blank" rel="noopener">阿里云</a>：域名注册与解析设置</li>
+<li><a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a>：基于Chrome V8的JavaScript运行环境</li>
+<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>：静态网站生成器，将Markdown文档转换为静态网页</li>
+<li><a href="https://typora.io/" target="_blank" rel="noopener">Typora</a>：Markdown文档编辑器，所见即所得</li>
+<li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>：代码版本管理与代码部署</li>
+<li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>：代码托管</li>
+<li><a href="https://www.netlify.com/" target="_blank" rel="noopener">netlify</a>：静态网站托管</li>
+</ul>
+<h2 id="域名注册与解析"><a href="#域名注册与解析" class="headerlink" title="域名注册与解析"></a>域名注册与解析</h2><p>在阿里云上以合适的价格购买喜欢的域名，和淘宝没区别。</p>
+<p>域名解析设置中注意区分记录类型，如类型A常用于将域名指向自建服务器的IP地址，类型CNAME则是将域名转向另一个域名。本文采用CNAME记录类型。</p>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>首先安装Git和Node.js开发工具，Windows平台下载安装即可，Linux平台使用yum、apt等包管理工具安装或者下载源码编译安装。</p>
+<p>其次安装Hexo，命令为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
+<p>安装完成后初始化网站编译环境：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<p>此时编译环境以及搭建完成，可以开启本地服务以查看网站效果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-server</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
+<p>然后开始进行网站内容的创作。发表新内容的命令为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>[layout]</code>值内容所在的页面，采用默认页面则可以省略。<code>&lt;title&gt;</code>为新建内容的标题，执行完该命令后在<code>source</code>目录里会生成<code>&lt;title&gt;.md</code>的文档。</p>
+<p>最后，通过Markdown编辑器如Typora对生成的文档进行编辑，完成后执行如下命令生成静态网页：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></p>
+<h2 id="代码托管"><a href="#代码托管" class="headerlink" title="代码托管"></a>代码托管</h2><p>网站的源文件可由GitHub的仓库进行托管，将修改并完成编译的网页文件推送至GitHub相应的仓库中。流程大致如下：</p>
+<ol>
+<li>GitHub中创建仓库，复制仓库的克隆地址；</li>
+<li><p>修改网站编译环境根目录下的<code>_config.yml</code>文件中的<code>deploy</code>参数：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/[user]/[repo].git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将生成的静态网站文件部署到GitHub：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="网站托管"><a href="#网站托管" class="headerlink" title="网站托管"></a>网站托管</h2><p>创建netlify账号并关联GitHub账户，按照网站指引添加网站内容，选择网站对应的仓库，完成后发布网站。</p>
+<p>需要注意的是，如需使用自己的域名，不仅要在netlify中进行域名的填写，还要在阿里云中对相应的域名进行解析设置。设置方式为采用CNAME类型将自己的域名指向netlify所提供的二级域名。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>开发免费托管的静态网站所使用到的工具较多，操作流程略微有些繁琐。不过开发技术门槛并不高，基本上按照这些工具的官方说明文档进行操作即可。过程中所使用到的命令都很简单，甚至没有编程基础也可以操作，唯一需要的是耐心。</p>
+<p>采用这种方式部署网站的好处是能够轻松实现网站的迁移，变更托管平台或者域名都不会对网站内容造成影响，比采用WordPress搭建的网站容易很多。</p>
+<p>网站搭建好了即可将重心放到丰富内容和美化网站上，慢慢折腾吧^_^</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fwzju.com/2019/01/25/开发免费托管的静态网站/" data-id="cjrbgj8i700090gebqzoqb8em" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Notation" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/14/Notation/" class="article-date">
@@ -102,7 +183,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#119;&#x66;&#101;&#110;&#103;&#64;&#122;&#x6a;&#117;&#46;&#101;&#x64;&#x75;&#x2e;&#99;&#x6e;">&#119;&#x66;&#101;&#110;&#103;&#64;&#122;&#x6a;&#117;&#46;&#101;&#x64;&#x75;&#x2e;&#99;&#x6e;</a>）</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x77;&#x66;&#x65;&#110;&#x67;&#64;&#x7a;&#106;&#117;&#x2e;&#x65;&#100;&#x75;&#46;&#99;&#x6e;">&#x77;&#x66;&#x65;&#110;&#x67;&#64;&#x7a;&#106;&#117;&#x2e;&#x65;&#100;&#x75;&#46;&#99;&#x6e;</a>）</p>
 <p>定义常用的数学符号含义，以及常用系统的关系式。</p>
 <table>
 <thead>
@@ -391,7 +472,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/07/14/Notation/" data-id="cjmygq7pw0005a4ebpcab2426" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/07/14/Notation/" data-id="cjrbgj8hr00040geb8eht0xii" class="article-share-link">Share</a>
       
       
     </footer>
@@ -427,7 +508,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#119;&#x66;&#101;&#110;&#103;&#x40;&#122;&#x6a;&#117;&#46;&#x65;&#100;&#x75;&#x2e;&#99;&#x6e;">&#119;&#x66;&#101;&#110;&#103;&#x40;&#122;&#x6a;&#117;&#46;&#x65;&#100;&#x75;&#x2e;&#99;&#x6e;</a>）</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x77;&#102;&#x65;&#x6e;&#103;&#64;&#122;&#106;&#x75;&#46;&#x65;&#x64;&#x75;&#46;&#99;&#x6e;">&#x77;&#102;&#x65;&#x6e;&#103;&#64;&#122;&#106;&#x75;&#46;&#x65;&#x64;&#x75;&#46;&#99;&#x6e;</a>）</p>
 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>一种建立在稀疏特性基础上的新型的采样理论。</p>
 <h2 id="研究历史"><a href="#研究历史" class="headerlink" title="研究历史"></a>研究历史</h2><p>石光明等综述了CS理论框架及关键技术问题，并着重介绍了信号稀疏变换、观测矩阵设计和重构算法三个方面的最新进展, 评述了其中的公开问题, 对研究中现存的难点问题进行了探讨, 最后介绍了 CS 理论的应用领域 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="石光明, 刘丹华, 高大化, 刘哲, 林杰, and 王良君, “压缩感知理论及其研究进展,” 电子学报, vol. 37, no. 5, pp. 1070–1081, 2009. 
 ">[1]</span></a></sup>。</p>
@@ -456,7 +537,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/07/12/Compressive-Sensing/" data-id="cjmygq7p50000a4ebn8i1yiau" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/07/12/Compressive-Sensing/" data-id="cjrbgj8hk00020gebr7xvhq1o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -492,7 +573,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x77;&#102;&#101;&#110;&#103;&#x40;&#122;&#x6a;&#x75;&#x2e;&#101;&#x64;&#117;&#x2e;&#99;&#110;">&#x77;&#102;&#101;&#110;&#103;&#x40;&#122;&#x6a;&#x75;&#x2e;&#101;&#x64;&#117;&#x2e;&#99;&#110;</a>）</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x77;&#x66;&#x65;&#x6e;&#x67;&#x40;&#x7a;&#x6a;&#117;&#x2e;&#101;&#100;&#117;&#x2e;&#99;&#x6e;">&#x77;&#x66;&#x65;&#x6e;&#x67;&#x40;&#x7a;&#x6a;&#117;&#x2e;&#101;&#100;&#117;&#x2e;&#99;&#x6e;</a>）</p>
 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。</p>
 <p>采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提高对DOA的分辨能力。压缩感知方法利用的是信号自身的稀疏特性，能够使用少量基本信号的线性组合表示一目标信号，以低于奈奎斯特采样率对信号进行采样。然后通过解凸优化问题从这些较少的采样中恢复或重构原始信号。</p>
 <p>压缩感知波束形成方法相比传统方法，具有更高的DOA分辨力。但是该方法的性能还与许多因素相关，比如接收信号的相关性、单个片段或者多个片段信号、接收阵的结构、阵元的间距等。</p>
@@ -511,7 +592,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/07/11/Compressive-beamforming/" data-id="cjmygq7ph0002a4ebpdqmon5i" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/07/11/Compressive-beamforming/" data-id="cjrbgj8h900000gebgpccuq1v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -553,7 +634,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/06/24/math-support/" data-id="cjmygq7q20008a4eb2gfhbftd" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/06/24/math-support/" data-id="cjrbgj8i500080gebhozzof6o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -600,7 +681,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/03/08/WSL-display-desktop/" data-id="cjmygq7py0006a4ebc71divcj" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/03/08/WSL-display-desktop/" data-id="cjrbgj8i000050geb88l2dda4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -653,60 +734,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/01/14/snippets/" data-id="cjmygq7q40009a4eb5sy0ode5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-MarkNotes_README" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/14/MarkNotes_README/" class="article-date">
-  <time datetime="2018-01-14T02:20:53.000Z" itemprop="datePublished">2018-01-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/开发/">开发</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/14/MarkNotes_README/">MarkNotes</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Use markdown to write notes for:</p>
-<ol>
-<li>easy to write, do not need to bother to the format;</li>
-<li>easy to reuse the resources including equations, codes, figures et al.;</li>
-<li>easy to read.</li>
-</ol>
-<p>将创作初期的文档用Markdown格式编写，并汇总在MarkNotes文件夹下。如此可以解决Markdown插入的资源分散的问题，同时也方便后续的修改。</p>
-<p>用于准备正是文档，而非备忘录。</p>
-<p>Markdown 擅长记录的内容：公式、在线图片、代码片段及类似 Markdown 语言绘制的图形。这些正好可以弥补 OneNote 的不足。因此，我将 MarkNote 作为 OneNote 的一个补充。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/01/14/MarkNotes_README/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/01/14/MarkNotes_README/" data-id="cjmygq7pn0004a4ebzloe3ar7" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/01/14/snippets/" data-id="cjrbgj8i200060geb71888p50" class="article-share-link">Share</a>
       
       
     </footer>
@@ -740,7 +768,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li></ul>
     </div>
   </div>
 
@@ -751,6 +779,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/01/25/开发免费托管的静态网站/">开发免费托管的静态网站</a>
+          </li>
         
           <li>
             <a href="/2018/07/14/Notation/">数学符号（Notation）</a>
@@ -768,10 +800,6 @@ ga('send', 'pageview');
             <a href="/2018/06/24/math-support/">Test Math Support</a>
           </li>
         
-          <li>
-            <a href="/2018/03/08/WSL-display-desktop/">WSL display desktop</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -786,7 +814,7 @@ ga('send', 'pageview');
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 冯玮<br>
+      &copy; 2019 冯玮<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
@@ -813,21 +841,6 @@ ga('send', 'pageview');
 
 <script src="/js/script.js"></script>
 
-  </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
