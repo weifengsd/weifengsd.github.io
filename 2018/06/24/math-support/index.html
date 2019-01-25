@@ -3,19 +3,19 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>Test Math Support | 冯玮的博客</title>
+  <title>Hexo Math Support | 冯玮的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="$$ \begin{eqnarray} \nabla\cdot\vec{E} &amp;amp;=&amp;amp; \frac{\rho}{\epsilon_0} \ \nabla\cdot\vec{B} &amp;amp;=&amp;amp; 0 \ \nabla\times\vec{E} &amp;amp;=&amp;amp; -\frac{\partial B}{\partial t} \ \nabla\times\vec{B} &amp;am">
+  <meta name="description" content="首先测试下当前Hexo对Math的支持情况：$$ \begin{eqnarray} \nabla\cdot\vec{E} &amp;amp;=&amp;amp; \frac{\rho}{\epsilon_0} \ \nabla\cdot\vec{B} &amp;amp;=&amp;amp; 0 \ \nabla\times\vec{E} &amp;amp;=&amp;amp; -\frac{\partial B}{\partial t} \ \">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Test Math Support">
+<meta property="og:title" content="Hexo Math Support">
 <meta property="og:url" content="http://fwzju.com/2018/06/24/math-support/index.html">
 <meta property="og:site_name" content="冯玮的博客">
-<meta property="og:description" content="$$ \begin{eqnarray} \nabla\cdot\vec{E} &amp;amp;=&amp;amp; \frac{\rho}{\epsilon_0} \ \nabla\cdot\vec{B} &amp;amp;=&amp;amp; 0 \ \nabla\times\vec{E} &amp;amp;=&amp;amp; -\frac{\partial B}{\partial t} \ \nabla\times\vec{B} &amp;am">
+<meta property="og:description" content="首先测试下当前Hexo对Math的支持情况：$$ \begin{eqnarray} \nabla\cdot\vec{E} &amp;amp;=&amp;amp; \frac{\rho}{\epsilon_0} \ \nabla\cdot\vec{B} &amp;amp;=&amp;amp; 0 \ \nabla\times\vec{E} &amp;amp;=&amp;amp; -\frac{\partial B}{\partial t} \ \">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-25T06:25:24.143Z">
+<meta property="og:updated_time" content="2019-01-25T07:03:37.271Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Test Math Support">
-<meta name="twitter:description" content="$$ \begin{eqnarray} \nabla\cdot\vec{E} &amp;amp;=&amp;amp; \frac{\rho}{\epsilon_0} \ \nabla\cdot\vec{B} &amp;amp;=&amp;amp; 0 \ \nabla\times\vec{E} &amp;amp;=&amp;amp; -\frac{\partial B}{\partial t} \ \nabla\times\vec{B} &amp;am">
+<meta name="twitter:title" content="Hexo Math Support">
+<meta name="twitter:description" content="首先测试下当前Hexo对Math的支持情况：$$ \begin{eqnarray} \nabla\cdot\vec{E} &amp;amp;=&amp;amp; \frac{\rho}{\epsilon_0} \ \nabla\cdot\vec{B} &amp;amp;=&amp;amp; 0 \ \nabla\times\vec{E} &amp;amp;=&amp;amp; -\frac{\partial B}{\partial t} \ \">
   
   
     <link rel="icon" href="/favicon.png">
@@ -93,7 +93,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Test Math Support
+      Hexo Math Support
     </h1>
   
 
@@ -101,13 +101,18 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>$$ \begin{eqnarray} \nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \ \nabla\cdot\vec{B} &amp;=&amp; 0 \ \nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \ \nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray} $$ </p>
-<p>$a^2+\sqrt{b}=\rho$</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>首先测试下当前Hexo对Math的支持情况：<br>$$ \begin{eqnarray} \nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \ \nabla\cdot\vec{B} &amp;=&amp; 0 \ \nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \ \nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right) \end{eqnarray} $$ </p>
+<h2 id="安装hexo-render-mathjax"><a href="#安装hexo-render-mathjax" class="headerlink" title="安装hexo-render-mathjax"></a>安装hexo-render-mathjax</h2><pre><code>$ npm install hexo-renderer-mathjax --save
+</code></pre><p>Edit <code>_config.yml</code>:</p>
+<pre><code>plugins:
+- hexo-renderer-mathjax
+</code></pre><h2 id="CDN出错"><a href="#CDN出错" class="headerlink" title="CDN出错"></a>CDN出错</h2><p>原来的CDN已不再使用，所以需要修改文件<code>\node_modules\hexo-renderer-mathjax\mathjax.html</code>这部分的注入代码。新的通过连接CDN加载MathJax的js代码为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">async</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>所以要修改文件：</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/06/24/math-support/" data-id="cjrbnxww90004ggebzaszotc1" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/06/24/math-support/" data-id="cjrbpah8g0007b4eb7kspdo24" class="article-share-link">Share</a>
       
       
     </footer>
@@ -188,7 +193,7 @@ ga('send', 'pageview');
           </li>
         
           <li>
-            <a href="/2018/06/24/math-support/">Test Math Support</a>
+            <a href="/2018/06/24/math-support/">Hexo Math Support</a>
           </li>
         
       </ul>
@@ -247,6 +252,8 @@ ga('send', 'pageview');
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
