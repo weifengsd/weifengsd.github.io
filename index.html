@@ -76,6 +76,55 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Windows-10-1809-程序字体显示错误原因" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/24/Windows-10-1809-程序字体显示错误原因/" class="article-date">
+  <time datetime="2019-02-24T05:52:07.000Z" itemprop="datePublished">2019-02-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/分享/">分享</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/24/Windows-10-1809-程序字体显示错误原因/">Windows 10 1809 程序字体显示错误原因</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>更新到Win10 1809后部分程序字体出现显示错误现象，如AIDA64中中文字符显示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3479625-7931f81bad04ad4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="win10 1809 fonts error.png"></p>
+<p>错误的原因在于这些程序并未采用Unicode编码，而Win10 1809以UTF-8格式显示这些字符，结果出错。该bug暂时还未修复，可以通过设置让中文显示正常。</p>
+<p>在 设置 - 时间和语言 - 语言 - 管理语言设置 中：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3479625-1f37a27bbdb78c26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="语言设置"></p>
+<p>非 Unicode 程序的语言 设置有个 Beta版的选项：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3479625-2b0cc90af027551e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="非Unicode Beta"></p>
+<p>勾选了该选项后，采用非Unicode的程序会出现字符显示错误的问题，bug来源于此。</p>
+<p>取消该选项并将区域设置为中文（简体，中国）后，采用中文编码的程序恢复正常显示。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fwzju.com/2019/02/24/Windows-10-1809-程序字体显示错误原因/" data-id="cjsiia5vh00043kebt7s6v2vt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-开发免费托管的静态网站" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/25/开发免费托管的静态网站/" class="article-date">
@@ -147,7 +196,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2019/01/25/开发免费托管的静态网站/" data-id="cjrbq1bfx000gaceb90gn5u2p" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2019/01/25/开发免费托管的静态网站/" data-id="cjsiia5vw00073keb5c9bspce" class="article-share-link">Share</a>
       
       
     </footer>
@@ -183,7 +232,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x77;&#x66;&#101;&#x6e;&#103;&#64;&#x7a;&#x6a;&#117;&#x2e;&#x65;&#100;&#117;&#46;&#99;&#x6e;">&#x77;&#x66;&#101;&#x6e;&#103;&#64;&#x7a;&#x6a;&#117;&#x2e;&#x65;&#100;&#117;&#46;&#99;&#x6e;</a>）</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#119;&#x66;&#x65;&#x6e;&#103;&#x40;&#122;&#x6a;&#117;&#46;&#x65;&#x64;&#117;&#46;&#x63;&#110;">&#119;&#x66;&#x65;&#x6e;&#103;&#x40;&#122;&#x6a;&#117;&#46;&#x65;&#x64;&#117;&#46;&#x63;&#110;</a>）</p>
 <p>定义常用的数学符号含义，以及常用系统的关系式。</p>
 <table>
 <thead>
@@ -472,7 +521,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/07/14/Notation/" data-id="cjrbq1bf40004acebw1929nuw" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/07/14/Notation/" data-id="cjsiia5vw00053keb1gxtcw3k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -508,7 +557,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#x3a;&#x77;&#102;&#101;&#x6e;&#103;&#x40;&#122;&#x6a;&#117;&#46;&#x65;&#100;&#117;&#x2e;&#99;&#110;">&#x77;&#102;&#101;&#x6e;&#103;&#x40;&#122;&#x6a;&#117;&#46;&#x65;&#100;&#117;&#x2e;&#99;&#110;</a>）</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#119;&#x66;&#101;&#x6e;&#103;&#x40;&#122;&#106;&#117;&#46;&#101;&#100;&#117;&#x2e;&#x63;&#x6e;">&#119;&#x66;&#101;&#x6e;&#103;&#x40;&#122;&#106;&#117;&#46;&#101;&#100;&#117;&#x2e;&#x63;&#x6e;</a>）</p>
 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>一种建立在稀疏特性基础上的新型的采样理论。</p>
 <h2 id="研究历史"><a href="#研究历史" class="headerlink" title="研究历史"></a>研究历史</h2><p>石光明等综述了CS理论框架及关键技术问题，并着重介绍了信号稀疏变换、观测矩阵设计和重构算法三个方面的最新进展, 评述了其中的公开问题, 对研究中现存的难点问题进行了探讨, 最后介绍了 CS 理论的应用领域 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="石光明, 刘丹华, 高大化, 刘哲, 林杰, and 王良君, “压缩感知理论及其研究进展,” 电子学报, vol. 37, no. 5, pp. 1070–1081, 2009. 
 ">[1]</span></a></sup>。</p>
@@ -537,7 +586,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/07/12/Compressive-Sensing/" data-id="cjrbq1bel0000aceb5ltv9ze6" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/07/12/Compressive-Sensing/" data-id="cjsiia5v100003kebacjzl3pu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -573,7 +622,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x77;&#x66;&#x65;&#110;&#x67;&#64;&#122;&#106;&#x75;&#x2e;&#x65;&#x64;&#x75;&#46;&#99;&#110;">&#x77;&#x66;&#x65;&#110;&#x67;&#64;&#122;&#106;&#x75;&#x2e;&#x65;&#x64;&#x75;&#46;&#99;&#110;</a>）</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>冯玮（<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x77;&#102;&#x65;&#x6e;&#x67;&#64;&#122;&#x6a;&#x75;&#46;&#101;&#100;&#x75;&#46;&#99;&#110;">&#x77;&#102;&#x65;&#x6e;&#x67;&#64;&#122;&#x6a;&#x75;&#46;&#101;&#100;&#x75;&#46;&#99;&#110;</a>）</p>
 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>由阵列信号做波束形成处理，可以估计信道的到达角度（direction-of-arrival, DOA）。</p>
 <p>采用压缩感知方法（compressive sensing, CS）与波束形成相结合，目的在于提高对DOA的分辨能力。压缩感知方法利用的是信号自身的稀疏特性，能够使用少量基本信号的线性组合表示一目标信号，以低于奈奎斯特采样率对信号进行采样。然后通过解凸优化问题从这些较少的采样中恢复或重构原始信号。</p>
 <p>压缩感知波束形成方法相比传统方法，具有更高的DOA分辨力。但是该方法的性能还与许多因素相关，比如接收信号的相关性、单个片段或者多个片段信号、接收阵的结构、阵元的间距等。</p>
@@ -592,7 +641,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/07/11/Compressive-beamforming/" data-id="cjrbq1ber0001acebsexa5sb2" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/07/11/Compressive-beamforming/" data-id="cjsiia5vh00033keba8s3rn7w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -645,7 +694,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/06/24/math-support/" data-id="cjrbq1bfo000caceb0iy57gxn" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/06/24/math-support/" data-id="cjsiia5vw00083kebs95p9w85" class="article-share-link">Share</a>
       
       
     </footer>
@@ -692,7 +741,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/03/08/WSL-display-desktop/" data-id="cjrbq1bez0003acebahk7c4ly" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/03/08/WSL-display-desktop/" data-id="cjsiia5vh00013kebh099h55j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -745,7 +794,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fwzju.com/2018/01/14/snippets/" data-id="cjrbq1bfs000eacebpf9v949t" class="article-share-link">Share</a>
+      <a data-url="http://fwzju.com/2018/01/14/snippets/" data-id="cjsiia5vw000b3keb9ec5ufiy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -779,7 +828,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li></ul>
     </div>
   </div>
 
@@ -790,6 +839,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/02/24/Windows-10-1809-程序字体显示错误原因/">Windows 10 1809 程序字体显示错误原因</a>
+          </li>
         
           <li>
             <a href="/2019/01/25/开发免费托管的静态网站/">开发免费托管的静态网站</a>
@@ -805,10 +858,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2018/07/11/Compressive-beamforming/">压缩感知波束形成（Compressive beamforming）</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/24/math-support/">Hexo Math Support</a>
           </li>
         
       </ul>
