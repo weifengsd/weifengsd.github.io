@@ -3,18 +3,19 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>Category: 写作 | 冯玮的博客</title>
+  <title>Tutorial for Git and Github | 冯玮的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="分享知识与兴趣">
-<meta property="og:type" content="website">
-<meta property="og:title" content="冯玮的博客">
-<meta property="og:url" content="http://fwzju.com/categories/写作/index.html">
+  <meta name="description" content="版本管理工具Git及相关网站等用法简单教程，默认采用Git bash for Windows，补充说明包括TortoiseGit， SourceTree等可视化工具的用法。 Git版本管理 查看帮助：git --help，更多帮助：git help tutorial 创建仓库：git init TortoiseGit: 目录空白处右击选择Git create repo here   添加需要管理的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tutorial for Git and Github">
+<meta property="og:url" content="http://fwzju.com/2019/03/14/git-tutorial/index.html">
 <meta property="og:site_name" content="冯玮的博客">
-<meta property="og:description" content="分享知识与兴趣">
+<meta property="og:description" content="版本管理工具Git及相关网站等用法简单教程，默认采用Git bash for Windows，补充说明包括TortoiseGit， SourceTree等可视化工具的用法。 Git版本管理 查看帮助：git --help，更多帮助：git help tutorial 创建仓库：git init TortoiseGit: 目录空白处右击选择Git create repo here   添加需要管理的">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-22T06:21:53.294Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="冯玮的博客">
-<meta name="twitter:description" content="分享知识与兴趣">
+<meta name="twitter:title" content="Tutorial for Git and Github">
+<meta name="twitter:description" content="版本管理工具Git及相关网站等用法简单教程，默认采用Git bash for Windows，补充说明包括TortoiseGit， SourceTree等可视化工具的用法。 Git版本管理 查看帮助：git --help，更多帮助：git help tutorial 创建仓库：git init TortoiseGit: 目录空白处右击选择Git create repo here   添加需要管理的">
   
   
     <link rel="icon" href="/favicon.png">
@@ -74,39 +75,98 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/07/14/Notation/" class="archive-article-date">
-  <time datetime="2018-07-14T07:12:22.000Z" itemprop="datePublished">7月 14</time>
+        <section id="main"><article id="post-git-tutorial" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/14/git-tutorial/" class="article-date">
+  <time datetime="2019-03-14T08:47:39.000Z" itemprop="datePublished">2019-03-14</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/开发/">开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/Notation/">数学符号（Notation）</a>
+    <h1 class="article-title" itemprop="name">
+      Tutorial for Git and Github
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>版本管理工具Git及相关网站等用法简单教程，默认采用<code>Git bash for Windows</code>，补充说明包括<code>TortoiseGit， SourceTree</code>等可视化工具的用法。</p>
+<h2 id="Git版本管理"><a href="#Git版本管理" class="headerlink" title="Git版本管理"></a>Git版本管理</h2><ul>
+<li>查看帮助：<code>git --help</code>，更多帮助：<code>git help tutorial</code></li>
+<li>创建仓库：<code>git init</code><ul>
+<li><code>TortoiseGit</code>: 目录空白处右击选择<code>Git create repo here</code></li>
+</ul>
+</li>
+<li>添加需要管理的文件：<code>git add [filename or directory]</code></li>
+<li>移动已管理的文件：<code>git mv [src] [dst]</code></li>
+<li>删除已管理的文件：<code>git rm [filename]</code></li>
+<li>提交本次修改内容：<code>git commit</code></li>
+<li>查看修改历史：<code>git log</code><ul>
+<li><code>TortoiseGit</code>: 目录空白处右击<code>TortoiseGit &gt; Show log</code></li>
+</ul>
+</li>
+<li>与之前版本比较差异：<ul>
+<li><code>TortoiseGit</code>: 目录空白处右击<code>TortoiseGit &gt; Show Diff with previous version</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Github代码托管与协作"><a href="#Github代码托管与协作" class="headerlink" title="Github代码托管与协作"></a>Github代码托管与协作</h2><h3 id="Git-SSH密钥配置"><a href="#Git-SSH密钥配置" class="headerlink" title="Git SSH密钥配置"></a>Git SSH密钥配置</h3><ul>
+<li><p>通过<code>Git GUI</code>创建<code>SSH key</code>，用于与服务器端加密通信，可设置密码</p>
+</li>
+<li><p>复制<code>public key</code>中的内容，添加到Github的相应设置中</p>
+</li>
+<li><p>生成的密钥文件保存在<code>User/[name]/.ssh/</code>文件夹下，<code>id_rsa</code>为私钥用于校验，<code>id_rsa.pub</code>为公钥用于服务端匹配</p>
+</li>
+<li><p>验证与GitHub的加密通信：<code>ssh -T git@github.com</code></p>
+</li>
+</ul>
+<p>还可以通过<code>ssh-keygen</code>命令或者<code>PuTTYgen</code>进行密钥配置，原理大致相同。</p>
+<h3 id="Git本地仓库与远程仓库交互"><a href="#Git本地仓库与远程仓库交互" class="headerlink" title="Git本地仓库与远程仓库交互"></a>Git本地仓库与远程仓库交互</h3><ul>
+<li>GitHub创建仓库：参考网页指引，完成后得到远程仓库地址<code>remote_repo</code>，如<code>git@github.com:[account]/[repo].git</code></li>
+<li>克隆远程仓库到本地：<code>git clone remote_repo</code></li>
+<li>本地已有仓库添加远程仓库：<code>git remote add remote_repo</code></li>
+<li>推送本地更新到远程仓库：<code>git push</code></li>
+<li>从远程仓库拉取内容：<code>git fetch</code></li>
+<li>从远程仓库拉取并更新本地内容：<code>git pull</code>(存在丢失本地修改内容的可能)</li>
+</ul>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
+<li><code>git pull</code>与<code>git fetch</code>的区别，参考：<a href="https://blog.csdn.net/weixin_41975655/article/details/82887273" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41975655/article/details/82887273</a></li>
+<li>更多用法参考帮助文档或者官网说明：<a href="https://git-scm.com/doc" target="_blank" rel="noopener">https://git-scm.com/doc</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fwzju.com/2019/03/14/git-tutorial/" data-id="cjtjogomn0001rcaxcdyn8ryx" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/24/Windows-10-1809-程序字体显示错误原因/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Windows 10 1809 程序字体显示错误原因</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
